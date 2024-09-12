@@ -1,16 +1,17 @@
-import { Comment } from 'src/entities/comment.entity';
-import { Topic } from 'src/entities/topic.entity';
+
+import { Project } from 'src/entities/project.entity';
+import { Task } from 'src/entities/task.entity';
 import { User } from 'src/entities/user.entity';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
 const config: PostgresConnectionOptions = {
   type: 'postgres',
-  database: 'testDB',
+  database: 'project',
   host: 'localhost',
   port: 5432,
   username: 'postgres',
   password: 'postgres',
-  entities: [User, Topic, Comment],
+  entities: [User, Project, Task],
   synchronize: true,
 };
 

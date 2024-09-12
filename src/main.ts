@@ -12,6 +12,6 @@ async function bootstrap() {
   );
   console.log({ secret: process.env.jwt_secret });
 
-  await app.listen(8000);
+  await app.listen(3000);
 }
 bootstrap();
