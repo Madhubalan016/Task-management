@@ -19,7 +19,7 @@ export class TaskController {
 
     @Post('/create')
     async createtask( @Body() taskDto: taskDto){
-        this.logger.debug('created the new task')
+        this.logger.debug('creating the new task...')
         return await this.taskService.create(taskDto)
     }
 
@@ -42,7 +42,7 @@ export class TaskController {
     @Delete('/delete/:id')
     @UseGuards(JwtGuard)
     async deleteTask(@Param('id') id:string){
-        this.logger.debug('Deleted the task by id');
+        this.logger.debug('Deleting the task by id..');
         return await this.taskService.delete(id);
     }
 }

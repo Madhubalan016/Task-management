@@ -1,9 +1,8 @@
 import { Body, Controller, Delete, Get, Logger, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { ProjectService } from './project.service';
-import { JwtGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtGuard } from '../auth/guards/jwt-auth.guard';
 import { ProjectDto, UpdateProjectDto } from './dto/project.dto';
-import { taskDto } from 'src/task/dto/task.dto';
-import { TaskService } from 'src/task/task.service';
+
 
 @Controller('projects')
 export class ProjectController {

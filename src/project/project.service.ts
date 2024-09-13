@@ -1,6 +1,6 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Project } from 'src/entities/project.entity';
+import { Project } from '../entities/project.entity';
 import { Repository } from 'typeorm';
 import { ProjectDto, UpdateProjectDto } from './dto/project.dto';
 import { EventEmitter2 } from '@nestjs/event-emitter';

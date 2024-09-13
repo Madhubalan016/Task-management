@@ -16,6 +16,11 @@ export class UserService {
      this.logger.debug('Find the user by id');
     return await this.userRepo.findOne({ where: { id: id } });
   }
+  async findOneWithUserName(username: string){
+     return await this.userRepo.findOne({where:{
+      name: username
+     }})
+  }
   async find(){
    this.logger.debug('find all users ');
     return await this.userRepo.find({relations:{ project: true }});
@@ -25,7 +30,7 @@ export class UserService {
     const user = this.userRepo.create(createUserDto);
     await this.userRepo.save(user);
     const { password, ...result } = user;
-    this.logger.debug('Creating the user ...');
+    this.logger.debug('user created');
     return result;
   }
 

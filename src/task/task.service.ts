@@ -33,7 +33,7 @@ export class TaskService {
 
     console.log("add result is ", result);
        this.eventEmitter.emit('Task.created', result);
-       this.logger.debug('creating the new Task...');
+       this.logger.debug('created the new Task');
        return result;
     }
 
@@ -57,7 +57,7 @@ export class TaskService {
     const result = await this.taskRepo.remove(task);
     console.log(" resulr is " ,result);
     this.eventEmitter.emit('Task.Deleted',result);
-    this.logger.debug('Deleting the task by id...');
+    this.logger.debug('Deleted the task by id');
     return result;
     }
 }
